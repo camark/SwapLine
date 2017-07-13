@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="SwapLine:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/SwapLine_jar</output-path>
+    <root id="archive" name="SwapLine.jar">
+      <element id="module-output" name="SwapLine" />
+    </root>
+  </artifact>
+</component>

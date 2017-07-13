@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="10" prefHeight="418.0" prefWidth="474.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.72" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints percentWidth="100" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints percentHeight="48" />
+      <RowConstraints percentHeight="4" />
+      <RowConstraints percentHeight="48" />
+   </rowConstraints>
+   <children>
+            <TextArea id="tb_Source" fx:id="tb_Source" GridPane.rowIndex="0" />
+            <HBox GridPane.halignment="CENTER" GridPane.rowIndex="1">
+               <children>
+                  <Button id="btnConvert" fx:id="btnConvert" mnemonicParsing="false" onAction="#OnButtonClick" text="转化" />
+                   <Button fx:id="btnOpenFile" onAction="#OnOpenFile" text="读取"/>
+                   <Button fx:id="btnClose" onAction="#onExit" text="退出"/>
+               </children>
+            </HBox>
+            <TextArea id="tbDest" fx:id="tbDest" GridPane.rowIndex="2" />
+         </children>
+
+</GridPane>
