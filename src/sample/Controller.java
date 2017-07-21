@@ -13,7 +13,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 public class Controller {
-    
+
     @FXML
     public Button btnClose;
 
@@ -38,14 +38,34 @@ public class Controller {
         String[] lines=txt.split(lineSeparator);
         StringBuilder sb=new StringBuilder();
 
+        boolean bhaveEnd=false;
         if(lines.length>0){
             for(String line:lines){
+                if(line.length()==0){
+                    continue;
+                }
+                StringBuilder sb_Spaces=new StringBuilder();
+                int beginIndex=0;
+                for(char c:line.toCharArray()){
+                    if(c!=' ')
+                        break;
+                    beginIndex++;
+                    sb_Spaces.append(" ");
+                }
+                bhaveEnd=false;
+                if(line.endsWith(";")){
+                    bhaveEnd=true;
+                    line=line.substring(beginIndex,line.length()-1);
+                }
                 String[] dots=line.split("=");
 
                 if(dots.length==2){
                     String s1=dots[1]+" = "+dots[0];
 
-                    sb.append(s1+lineSeparator);
+                    if(bhaveEnd)
+                        sb.append((sb_Spaces.toString()+s1+";"+lineSeparator));
+                    else
+                        sb.append(sb_Spaces.toString()+s1+lineSeparator);
                 }
             }
         }
